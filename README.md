@@ -61,10 +61,10 @@ When you are done, the output should look something like this:
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-chainID: dL5FhBfaR4zE3s6xwtisj4C2aGw4dLGQMfMjM2BJgqkgcbG9t
-metadata (can be changed later): Goldcoin
+chainID: w846RNV4z9DtSMJ1UDUZh8XmarZKxF9WNTRFwAfXv6eaYSN6U
+metadata (can be changed later): cc
 continue (y/n): y
-✅ txID: ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
+✅ txID: u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
 ```
 
 _`txID` is the `assetID` of your new asset._
@@ -84,13 +84,13 @@ just to mint to yourself).
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-assetID: ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
-✔ assetID: ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
-metadata: Goldcoin supply: 0
+chainID: w846RNV4z9DtSMJ1UDUZh8XmarZKxF9WNTRFwAfXv6eaYSN6U
+assetID: u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
+metadata: cc supply: 0
 recipient: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-amount: 100000
+amount: 1000000
 continue (y/n): y
-✅ txID: 2tcDV5K6NxiQF97Fd5KSXCSz8GjGZP8Bn6qqXY6jEpz2sTiVB6
+✅ txID: BdogHcRMcKcZmaVA5c7svJ7yR288TrXKPNnYqXjLjqxzVhdx5
 ```
 
 #### Step 3: View Your Balance
@@ -104,15 +104,15 @@ When you are done, the output should look something like this:
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-chainID: dL5FhBfaR4zE3s6xwtisj4C2aGw4dLGQMfMjM2BJgqkgcbG9t
-assetID (use TKN for native token): ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
-uri: http://127.0.0.1:29517/ext/bc/dL5FhBfaR4zE3s6xwtisj4C2aGw4dLGQMfMjM2BJgqkgcbG9t
-metadata: Goldcoin supply: 100000 warp: false
-balance: 100000 ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
+chainID: w846RNV4z9DtSMJ1UDUZh8XmarZKxF9WNTRFwAfXv6eaYSN6U
+assetID (use TKN for native token): u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
+uri: http://127.0.0.1:15613/ext/bc/w846RNV4z9DtSMJ1UDUZh8XmarZKxF9WNTRFwAfXv6eaYSN6U
+metadata: cc supply: 1000000 warp: false
+balance: 1000000 u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
 ```
 
 #### Step 4: Create an Order
-So, we have some of our token (`Goldcoin`)...now what? Let's put an order
+So, we have some of our token (`cc`)...now what? Let's put an order
 on-chain that will allow someone to trade the native token (`TKN`) for some.
 You can do so by running the following command from this location:
 ```bash
@@ -123,16 +123,16 @@ When you are done, the output should look something like this:
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-chainID: dL5FhBfaR4zE3s6xwtisj4C2aGw4dLGQMfMjM2BJgqkgcbG9t
+chainID: w846RNV4z9DtSMJ1UDUZh8XmarZKxF9WNTRFwAfXv6eaYSN6U
 in assetID (use TKN for native token): TKN
-in tick: 1
-out assetID (use TKN for native token): ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
-metadata: Goldcoin supply: 100000 warp: false
-balance: 100000 ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
+✔ in tick: 1
+out assetID (use TKN for native token): u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
+metadata: cc supply: 1000000 warp: false
+balance: 1000000 u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
 out tick: 100
 supply (must be multiple of out tick): 100
 continue (y/n): y
-✅ txID: DJjtUuVtWDja57CUyZfyeQ3RfEFLt5J6Ms3kPHwURYW3oF7bM
+✅ txID: 2CB56oBf2b7Upi1Bk8nwztCugyR8b7uY3TUUTkvyzwpXxCwPzQ
 ```
 
 _`txID` is the `orderID` of your new order._
@@ -153,18 +153,18 @@ When you are done, the output should look something like this:
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-chainID: dL5FhBfaR4zE3s6xwtisj4C2aGw4dLGQMfMjM2BJgqkgcbG9t
+chainID: w846RNV4z9DtSMJ1UDUZh8XmarZKxF9WNTRFwAfXv6eaYSN6U
 in assetID (use TKN for native token): TKN
-balance: 999.999998632 TKN
-out assetID (use TKN for native token): ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
-metadata: Goldcoin supply: 100000 warp: false
+balance: 999.999998638 TKN
+out assetID (use TKN for native token): u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
+metadata: cc supply: 1000000 warp: false
 available orders: 1
-0) Rate(in/out): 10000000.0000 InTick: 1.000000000 TKN OutTick: 100 ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza Remaining: 100 ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
+0) Rate(in/out): 10000000.0000 InTick: 1.000000000 TKN OutTick: 100 u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP Remaining: 100 u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
 select order: 0
 value (must be multiple of in tick): 1
-in: 1.000000000 TKN out: 100 ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
-✔ continue (y/n): y
-✅ txID: DUcnHQgEtZ7mMiiwMj8vLzhSJwotgWyHDTajjWriHHQWA42Sr
+in: 1.000000000 TKN out: 100 u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
+continue (y/n): y
+✅ txID: ExHemDFkceKj8FmC23egmEyUFzEhoMF2CZHWHqLofP7UeYvFV
 ```
 
 Note how all available orders for this pair are listed by the CLI (these come
@@ -182,10 +182,11 @@ When you are done, the output should look something like this:
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
-✔ orderID: DJjtUuVtWDja57CUyZfyeQ3RfEFLt5J6Ms3kPHwURYW3oF7bM
-out assetID (use TKN for native token): ywfmASBCPjXbmVEeTM8u8CCZ82tkN2t9yKg7hteG9w2M2ffza
+chainID: w846RNV4z9DtSMJ1UDUZh8XmarZKxF9WNTRFwAfXv6eaYSN6U
+orderID: 2CB56oBf2b7Upi1Bk8nwztCugyR8b7uY3TUUTkvyzwpXxCwPzQ
+out assetID (use TKN for native token): u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
 continue (y/n): y
-✅ txID: 2Z9AYgiZfsebLLyrT53egXLGeY8H2kEmNf4yWdik6JBtgA2ARw
+✅ txID: 2fYGH9oXZb6oMs9h5zxNrTNQnSgvevr1A5B6az3YodGRT81PEy
 ```
 
 Any funds that were locked up in the order will be returned to the creator's
