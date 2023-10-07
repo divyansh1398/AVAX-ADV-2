@@ -1,28 +1,28 @@
-# Avax-Eth Assignment
+# Avax-Advance Assignment
 
-Going to use our configured subnet created on our local network using hyperSDK.
+We will utilize the subnet configuration we established within our local network using the HyperSDK.
 
 ## Description
 
-Going to use the initial repository of hypersdk to configure and launch our own subnet in our local network and work on it.
+We intend to utilize HyperSDK's initial repository to set up and initiate our custom subnet within our local network, where we will be actively working on it.
 
 ## Getting Started
 
 ### Note:
 
-You need to create your own build for checking as build file are greater than 25mb and does not have an extention so i can't upload :-( 
-and same with the test folder you can take it from the official repo as well.
+To facilitate checking, you should generate your own build since the build files exceed 25MB in size and lack file extensions, 
+preventing me from uploading them. Similarly, for the test folder, you can retrieve it from the official repository.
 
 ## Initialize
 
-1. To get started, first you need to go to const/const.go and give your native token of your subnet a name and a symbol, etc (install GO).
-2. Now create a controller/registry.go file and add your mint, create and transfer initializations.
-3. Now run this command inside the root folder.
+1. To begin, please navigate to the 'const/const.go' file and assign a name and symbol to your subnet's native token. Make sure you have GO installed before proceeding.
+2. Next, create a 'controller/registry.go' file and include the initializations for minting, creating, and transferring within it.
+3. Now run this command.
    ``go mod tidy``
    it will download all the dependency.
-4. Then run this script to run the configurations set by you and all the testing are done autmatically.
+4. After completing the above steps, execute the script to apply the configurations you've set, and the testing will be automated.
    ``./scripts/run.sh`` or ``bash ./scripts/run.sh``
-5. Then after success run this to create the build from above.
+5. Once the configurations and testing have been successfully completed, you can proceed to run the script to generate the build as mentioned earlier.
    ``./scripts/build.sh`` or ``bash ./scripts/build.sh``
    
 _This command will put the compiled CLI in `./build/token-cli`._
@@ -73,14 +73,13 @@ The "loaded address" here is the address of the default private key (`demo.pk`).
 use this key to authenticate all interactions with the `tokenvm`.
 
 #### Step 2: Mint Your Asset
-After we've created our own asset, we can now mint some of it. You can do so by
+Now that we've successfully created our own asset, we can proceed to mint a quantity of it. You can do so by
 running the following command from this location:
 ```bash
 ./build/token-cli action mint-asset
 ```
 
-When you are done, the output should look something like this (usually easiest
-just to mint to yourself).
+Once you've completed the minting process, the output should resemble something similar to this, typically done by minting tokens to your own address for simplicity.
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
@@ -94,13 +93,13 @@ continue (y/n): y
 ```
 
 #### Step 3: View Your Balance
-Now, let's check that the mint worked right by checking our balance. You can do
+Now, let's verify that the minting process was successful by confirming our balance. You can do
 so by running the following command from this location:
 ```bash
 ./build/token-cli key balance
 ```
 
-When you are done, the output should look something like this:
+When you are done, the output should look like this:
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
@@ -112,14 +111,13 @@ balance: 1000000 u1d2LGZaDvVKgCne5HrGR6vMH2CupqjUTtCEFNZEa4Mno44gP
 ```
 
 #### Step 4: Create an Order
-So, we have some of our token (`cc`)...now what? Let's put an order
-on-chain that will allow someone to trade the native token (`TKN`) for some.
+With some of our token (`cc`) in hand, the next step is to place an on-chain order that enables individuals to exchange the native token (`TKN`) for some of ours.
 You can do so by running the following command from this location:
 ```bash
 ./build/token-cli action create-order
 ```
 
-When you are done, the output should look something like this:
+When you are done, the output should look like this:
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
@@ -137,11 +135,8 @@ continue (y/n): y
 
 _`txID` is the `orderID` of your new order._
 
-The "in tick" is how much of the "in assetID" that someone must trade to get
-"out tick" of the "out assetID". Any fill of this order must send a multiple of
-"in tick" to be considered valid (this avoid ANY sort of precision issues with
-computing decimal rates on-chain).
-
+The "in tick" represents the amount of the "in assetID" that an individual must trade to receive the "out tick" of the "out assetID." 
+It's essential to note that any execution of this order must involve a trade in multiples of the "in tick" to ensure validity and prevent precision issues when calculating decimal rates on-chain.
 #### Step 5: Fill Part of the Order
 Now that we have an order on-chain, let's fill it! You can do so by running the
 following command from this location:
@@ -171,14 +166,12 @@ Note how all available orders for this pair are listed by the CLI (these come
 from the in-memory order book maintained by the `tokenvm`).
 
 #### Step 6: Close Order
-Let's say we now changed our mind and no longer want to allow others to fill
-our order. You can cancel it by running the following command from this
-location:
+If you've had a change of heart and no longer wish to permit others to execute your order, you can cancel it by running the following command from this location:
 ```bash
 ./build/token-cli action close-order
 ```
 
-When you are done, the output should look something like this:
+When you are done, the output should look like this:
 ```
 database: .token-cli
 address: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp
@@ -189,5 +182,4 @@ continue (y/n): y
 ✅ txID: 2fYGH9oXZb6oMs9h5zxNrTNQnSgvevr1A5B6az3YodGRT81PEy
 ```
 
-Any funds that were locked up in the order will be returned to the creator's
-account.
+Any funds that were previously locked up in the order will be refunded to the creator's account upon cancellation.
